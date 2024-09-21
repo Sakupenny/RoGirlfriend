@@ -69,9 +69,9 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #3c3c3c; /* Darker inside color */
+    background-color: #3c3c3c;
     color: #fff;
-    border: 2px solid #222; /* Slightly darker outline */
+    border: 2px solid #222;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ button {
     position: absolute;
     width: calc(100% / 3);
     height: calc(100% / 3);
-    opacity: 0; /* Hidden but allows for hover */
+    opacity: 0;
 }
 
 .hover-point:nth-child(1) { top: 0; left: 0; }

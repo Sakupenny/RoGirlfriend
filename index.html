@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="topbar">RoGirlfriend</div>
 
     <div class="container">
         <h1>Your Perfect Partner,</h1>
         <h2>In Roblox.</h2>
         <p>Enjoy endless fun with a girlfriend, without having to talk to anyone in real life.</p>
 
+        <!-- Code Box -->
         <div class="code-container">
-            <textarea readonly id="scriptBox">getgenv().BoyfriendUsername = "USERNAME_HERE"
+            <textarea readonly id="scriptBox">--// Execute this on your alt (GF)
+getgenv().BoyfriendUsername = "USERNAME_HERE"
 getgenv().TeleportDistance = 30
 getgenv().GirlfriendWalkSpeed = 24
 getgenv().GirlfriendRightOffset = -3
@@ -26,6 +30,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Sakupenny/RoGirlfrien
             <button onclick="copyCode()">Copy</button>
         </div>
 
+        <!-- Info Boxes -->
         <div class="boxes-container">
             <div class="box">
                 <h3>Trust</h3>
@@ -53,14 +58,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Sakupenny/RoGirlfrien
             alert("Copied the script!");
         }
 
-
         const boxes = document.querySelectorAll('.box');
         boxes.forEach(box => {
             box.addEventListener('mousemove', (e) => {
                 const { clientX, clientY } = e;
                 const { left, top, width, height } = box.getBoundingClientRect();
-                const offsetX = (clientX - (left + width / 2)) / -5;
-                const offsetY = (clientY - (top + height / 2)) / -5;
+                const offsetX = (clientX - (left + width / 2)) / -5; // Divide by -5 for stronger tilt
+                const offsetY = (clientY - (top + height / 2)) / -5; // Divide by -5 for stronger tilt
                 box.style.transform = `rotateY(${offsetX}deg) rotateX(${-offsetY}deg)`;
             });
             box.addEventListener('mouseleave', () => {

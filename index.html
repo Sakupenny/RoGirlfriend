@@ -1,87 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Perfect Partner</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
         <h1>Your Perfect Partner,</h1>
         <h2>In Roblox.</h2>
         <p>Enjoy endless fun with a girlfriend, without having to talk to anyone in real life.</p>
+
         <div class="code-container">
-            <input type="text" id="codeBox" value="loadstring(game:HttpGet('https://raw.githubusercontent.com/Sakupenny/RoGirlfriend/refs/heads/main/Source.lua'))()" readonly>
-            <button id="copyButton">Copy</button>
+            <textarea readonly id="scriptBox">getgenv().BoyfriendUsername = "USERNAME_HERE"
+getgenv().TeleportDistance = 30
+getgenv().GirlfriendWalkSpeed = 24
+getgenv().GirlfriendRightOffset = -3
+getgenv().GirlfriendFrontOffset = -1
+getgenv().GirlfriendAge = 24
+getgenv().GirlfriendName = "Jane"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sakupenny/RoGirlfriend/refs/heads/main/Source.lua"))()</textarea>
+            <button onclick="copyCode()">Copy</button>
         </div>
+
         <div class="boxes-container">
             <div class="box">
-                <div class="box-contents">
-                    <h3>Trust</h3>
-                    <p>I've been ass at scripting since 2020.</p>
-                </div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
+                <h3>Trust</h3>
+                <p>I've been ass at scripting since 2020.</p>
             </div>
             <div class="box">
-                <div class="box-contents">
-                    <h3>Quality</h3>
-                    <p>This shit is ass bro</p>
-                </div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
+                <h3>Quality</h3>
+                <p>This shit is ass bro.</p>
             </div>
             <div class="box">
-                <div class="box-contents">
-                    <h3>Frequent updates</h3>
-                    <p>jk ion even update</p>
-                </div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
-                <div class="hover-point"></div>
+                <h3>Frequent updates</h3>
+                <p>jk ion even update.</p>
             </div>
         </div>
-    </div>
-    <script>
-        const copyButton = document.getElementById('copyButton');
-        const codeBox = document.getElementById('codeBox');
 
-        copyButton.addEventListener('click', () => {
-            codeBox.select();
-            document.execCommand('copy');
-            alert('Code copied to clipboard!');
-        });
+    </div>
+
+    <script>
+
+        function copyCode() {
+            var copyText = document.getElementById("scriptBox");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); 
+            document.execCommand("copy");
+            alert("Copied the script!");
+        }
+
 
         const boxes = document.querySelectorAll('.box');
         boxes.forEach(box => {
             box.addEventListener('mousemove', (e) => {
                 const { clientX, clientY } = e;
                 const { left, top, width, height } = box.getBoundingClientRect();
-                const offsetX = (clientX - (left + width / 2)) / 5; // Increased divisor for stronger tilt
-                const offsetY = (clientY - (top + height / 2)) / 5; // Increased divisor for stronger tilt
+                const offsetX = (clientX - (left + width / 2)) / -5;
+                const offsetY = (clientY - (top + height / 2)) / -5;
                 box.style.transform = `rotateY(${offsetX}deg) rotateX(${-offsetY}deg)`;
             });
             box.addEventListener('mouseleave', () => {
                 box.style.transform = 'none';
             });
         });
-
     </script>
+
 </body>
 </html>

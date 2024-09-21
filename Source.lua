@@ -109,7 +109,7 @@ local OkayResponses = {
 }
 
 local hugging = false
-local following = false
+local following = true
 
 BF.Chatted:Connect(function(msg)
     if msg:lower():find("hug") then
@@ -146,6 +146,8 @@ BF.Chatted:Connect(function(msg)
         chat(FineResponses[math.random(1, #FineResponses)])
     end
 end)
+
+chat("Hi " .. BF.Name .. "! You can say 'follow', 'stop following', 'hug', 'stop hugging'")
 
 game:GetService("RunService").RenderStepped:Connect(function()
     if humanoid then
